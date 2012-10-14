@@ -17,7 +17,7 @@ int main()
 	double kr=0,kg=0,kb=0;
 	int step=100;
 	int celr,celg,celb;
-	while(!(psmove_get_buttons(move)&Btn_PS))
+	while(true)
 	{
 		getCurrent(&celr,&celg,&celb);	
 		kr=(celr-r)/step;
@@ -29,7 +29,7 @@ int main()
 			b+=kb;
 			psmove_set_leds(move,int(r),int(g),int(b));
 			psmove_update_leds(move);
-			usleep(50000);
+			usleep(20000);
 		}
 	}
 	psmove_disconnect(move);
